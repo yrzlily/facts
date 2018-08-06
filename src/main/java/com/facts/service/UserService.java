@@ -18,4 +18,16 @@ public interface UserService {
      */
     List<User> findAll();
 
+    /**
+     * 登陆查询
+     * @param username
+     * @return
+     */
+    User findByUsername(String username);
+
+    /**
+     * 注册用户
+     * @param user
+     */
+    void add(User user);
 }

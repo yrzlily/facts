@@ -24,11 +24,7 @@ public class IndexController {
     @RequestMapping("/")
     public ModelAndView index(ModelAndView view){
         view.setViewName("/index/index");
-        List<User> user = userService.findAll();
-        for (User u : user){
-            System.out.println(u.getUsername());
-        }
-        view.addObject("user" , user);
+
         return view;
     }
 

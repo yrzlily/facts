@@ -17,7 +17,8 @@
   <!-- 读取监听器 -->
   <context-param>
     <param-name>contextConfigLocation</param-name>
-    <param-value>classpath*:applicationContext.xml</param-value>
+    <param-value>
+      classpath*:applicationContext.xml</param-value>
   </context-param>
 
   <!-- Spring 监听器 -->
@@ -38,9 +39,18 @@
   <filter-mapping>
     <filter-name>encodingFilter
     </filter-name>
-    <url-pattern>*</url-pattern>
+    <url-pattern>/*</url-pattern>
   </filter-mapping>
 
+  <!--springSecurity配置-->
+  <filter>
+    <filter-name>springSecurityFilterChain</filter-name>
+    <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>springSecurityFilterChain</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
 
   <!--mvc配置-->
   <servlet>
@@ -54,7 +64,10 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>my-dispatcher</servlet-name>
-    <url-pattern>/*</url-pattern>
+    <url-pattern>/</url-pattern>
   </servlet-mapping>
+
+
+
 
 </web-app>

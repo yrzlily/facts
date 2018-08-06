@@ -17,6 +17,16 @@ public class User {
 
     private Timestamp update_time;
 
+    private Integer access;
+
+    public Integer getAccess() {
+        return access;
+    }
+
+    public void setAccess(Integer access) {
+        this.access = access;
+    }
+
     public Integer getId() {
         return id;
     }

@@ -19,4 +19,17 @@ public interface UserDao {
      */
     List<User> findAll();
 
+    /**
+     * 登陆查询
+     * @param username
+     * @return
+     */
+    User findByUsername(String username);
+
+
+    /**
+     * 用户注册
+     * @param user
+     */
+    void addUser(User user);
 }
