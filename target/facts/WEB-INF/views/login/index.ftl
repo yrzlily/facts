@@ -11,13 +11,13 @@
         <div class="layui-form-item">
             <label class="layui-form-label">用户名</label>
             <div class="layui-input-block">
-                <input type="text" name="username" value="" required  lay-verify="required" placeholder="用户名" autocomplete="off" class="layui-input">
+                <input type="text" name="username" value="yrz" required  lay-verify="required" placeholder="用户名" autocomplete="off" class="layui-input">
             </div>
         </div>
         <div class="layui-form-item">
             <label class="layui-form-label">密码</label>
             <div class="layui-input-block">
-                <input type="password" name="password" value=""  placeholder="请输入密码" autocomplete="off" class="layui-input">
+                <input type="password" name="password" value="1234567"  placeholder="请输入密码" autocomplete="off" class="layui-input">
             </div>
         </div>
         <div class="layui-form-item">

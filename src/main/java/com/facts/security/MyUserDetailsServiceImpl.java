@@ -65,8 +65,11 @@ public class MyUserDetailsServiceImpl implements UserDetailsService {
 
         authList.add(new SimpleGrantedAuthority("ROLE_TOUR"));
 
+        String targetUrl = "/user/index";
+
         if(access.compareTo(1) == 0){
             authList.add(new SimpleGrantedAuthority("ROLE_ADMIN"));
+            targetUrl = "/main/index";
         }
 
         return authList;

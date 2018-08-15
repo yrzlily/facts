@@ -15,12 +15,13 @@
 	        http://www.springframework.org/schema/aop/spring-aop-3.1.xsd
 ">
 
-    <!--扫描aop配置-->
+    <!--aop代理-->
     <aop:aspectj-autoproxy/>
     <aop:aspectj-autoproxy proxy-target-class="true"/>
 
     <!--扫描所有的控制层  -->
     <context:component-scan base-package="com.facts.controller" />
+
 
     <mvc:annotation-driven>
         <mvc:message-converters register-defaults="true">

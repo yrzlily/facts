@@ -1,0 +1,45 @@
+GitHub  项目管理工具
+
+先安装运行环境 Git-2.7.2-32-bit_setup.1457942412.exe （如下）
+安装完后
+鼠标右键 选择Git bash here 
+如图（github_1.jpg） 
+在电脑D盘新建一个文件夹名为abc
+再去github官网登录拷贝网址（如图github_3.jpg）
+
+在黑屏区域输入指令 
+$ git clone  https://github.com/zwb9792/zwb9792.github.io.git(在官网克隆的网址) 回车
+
+再输入指令(更改使用者邮箱)
+$ git config --global user.email "www.471559037@163.com"    回车
+
+检测指令（查看使用者邮箱）
+$ git config --global user.email     回车
+
+再输入指令(更改使用者账号名字)
+$ git config --global user.name "zwb471559037"    回车
+
+检测指令（查看使用者账号名字）
+$ git config --global user.name     回车
+
+回到新建好的文件夹abc，里面会有一个zwb9792.github.io（你的github）的文件夹
+
+输入指令
+$ cd zwb9792.github.io  回车（进入你的github文件夹，有master表示已成功）
+
+
+更改文件，之后输入指令
+$ git status       回车 （查看状态）
+
+输入指令
+$ git add .   回车（提交到暂存区）
+
+输入指令
+$ git commit -a -m "注释"    回车（暂存区转到版本库）
+
+输入指令 
+$ git push origin master   回车（上传到github上，之后输入账号密码就ok了）
+
+
+
+PS：详情请看（“git和github.ppt”）

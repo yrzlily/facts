@@ -7,7 +7,10 @@
         http://www.springframework.org/schema/security
         http://www.springframework.org/schema/security/spring-security-4.2.xsd">
 
-    <sec:http auto-config="true" use-expressions="true">
+    <sec:http auto-config="true" use-expressions="true" authentication-manager-ref="authenticationManager">
+
+        <sec:remember-me use-secure-cookie="true" user-service-ref="userDetailsService"/>
+
         <!--指定路劲权限-->
         <sec:intercept-url pattern="/" access="hasRole('ROLE_TOUR')" />
         <sec:intercept-url pattern="/main/**" access="hasRole('ROLE_ADMIN')" />
@@ -17,9 +20,14 @@
         <!--登陆入口，默认跳转-->
         <sec:form-login
                 login-page="/login/index"
+                login-processing-url="/login"
+                default-target-url="/index/role"
                 authentication-failure-url="/login/index?log=err"
-                default-target-url="/main/index"/>
+        />
         <sec:csrf disabled="true"/>
+
+        <!--记住我-->
+
         <!--退出默认跳转-->
         <sec:logout
                 invalidate-session="true"
@@ -30,8 +38,10 @@
         <sec:access-denied-handler error-page="/login/403" />
     </sec:http>
 
+
+
     <!--认证管理-->
-    <sec:authentication-manager id="authenticationManager">
+    <sec:authentication-manager id="authenticationManager" erase-credentials="false">
         <sec:authentication-provider user-service-ref="userDetailsService">
             <sec:password-encoder ref="customPasswordEncoder" />
         </sec:authentication-provider>

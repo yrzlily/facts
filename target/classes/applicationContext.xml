@@ -9,6 +9,7 @@
 
 ">
 
+
     <!--扫描组件自动注入-->
     <context:component-scan base-package="com.facts"/>
 
@@ -21,4 +22,10 @@
     <!--激活spring 注解-->
     <context:annotation-config />
 
+    <!--文件上传-->
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <property name="maxUploadSize" value="104857600" />
+        <property name="maxInMemorySize" value="4096" />
+        <property name="defaultEncoding" value="UTF-8" />
+    </bean>
 </beans>
